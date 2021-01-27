@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Setting } from "./setting.interfaces";
 
 const initialState: Setting = {
-  name: "ttuananhle",
+  name: "app",
   loading: false,
 };
 
@@ -23,9 +23,7 @@ const setting = createSlice({
 
 const { updateName, setLoading } = setting.actions;
 
-export const { reducer } = setting;
-
 export const namespace = setting.name;
 export const actions = { updateName, setLoading };
 
-export default setting;
+export default setting.reducer;

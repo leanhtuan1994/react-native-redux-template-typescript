@@ -1,13 +1,13 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
-const BASE_URL = "https://pokeapi.co/api/v2/";
+const BASE_URL = "";
 const TIME_OUT = 20000;
 
 class Api {
   axiosInstance: AxiosInstance;
 
   constructor(baseURL: string = BASE_URL, token = "") {
-    console.log("tuananhle token: " + token);
+    console.log("token: " + token);
 
     this.axiosInstance = axios.create({
       baseURL,
@@ -68,5 +68,7 @@ class Api {
     }
   }
 }
+
+const apiService = new Api();
 
 export default Api;
