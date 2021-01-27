@@ -101,9 +101,9 @@ export function MyComponent() {
   - https://jestjs.io/docs/en/getting-started
   - https://enzymejs.github.io/enzyme/docs/guides/react-native.html
 
-### Firebase
+### Build & deploy using Fastlane
 
-If you wanna use firebase in this project, please check branch `features/firebase` with fully setup firebase & notification.
+- Please check fastlane folder for more details
 
 ### Visual Studio Extensions Recommendation
 

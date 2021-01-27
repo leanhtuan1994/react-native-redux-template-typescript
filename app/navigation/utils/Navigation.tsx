@@ -7,9 +7,6 @@ import {
 } from "@react-navigation/core";
 import throttle from "lodash.throttle";
 
-const navigateSafe = (navigate: any, time = 2000) =>
-  throttle(navigate, time, { trailing: false });
-
 export const navigatorRef = React.createRef<NavigationContainerRef>();
 
 export type ScreenComponent<
@@ -45,7 +42,15 @@ export function registerScreen<
       options,
     },
     present: (navigation: NavigationProp<P>, params?: P[N]) => {
-      navigateSafe(navigation.navigate({ name, params: params as P[N] }));
+      throttle(
+        () => {
+          navigation.navigate({ name, params: params as P[N] });
+        },
+        500,
+        {
+          trailing: false,
+        },
+      );
     },
   };
 }
