@@ -17,14 +17,15 @@
       "images": ["assets/images"],
       "navigation/*": ["app/navigation/*"],
       "modules/*": ["app/modules/*"],
-      "splash": ["app/modules/splash"],
       "utils/*": ["app/utils/*"],
       "translations/*": ["app/utils/translations/*"],
       "languages": ["languages"],
       "styles/*": ["app/styles/*"],
       "components/*": ["app/components/*"],
       "context/*": ["app/context/*"],
-      "stores": ["app/stores"]
+      "stores": ["app/stores"],
+      "services/*": ["app/services"],
+      "commons/*": ["app/modules/commons/*"]
     }
   },
   "exclude": [
