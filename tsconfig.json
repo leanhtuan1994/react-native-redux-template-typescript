@@ -24,7 +24,7 @@
       "components/*": ["app/components/*"],
       "context/*": ["app/context/*"],
       "stores": ["app/stores"],
-      "services/*": ["app/services"],
+      "services/*": ["app/services/*"],
       "commons/*": ["app/modules/commons/*"]
     }
   },

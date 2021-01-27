@@ -71,4 +71,4 @@ class Api {
 
 const apiService = new Api();
 
-export default Api;
+export default apiService;

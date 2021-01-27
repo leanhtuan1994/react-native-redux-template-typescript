@@ -8,7 +8,6 @@ import "translations/initi18next";
 import AppTheme, { Colors } from "styles";
 import { Provider } from "react-redux";
 import store from "stores";
-import { ApiServiceProvider } from "context/ApiServiceContext";
 
 //* required to improvement native screens
 enableScreens();
@@ -31,13 +30,11 @@ const App = () => {
         translucent
         backgroundColor={Colors.White}
       />
-      <ApiServiceProvider>
-        <Provider store={store}>
-          <AppTheme>
-            <AppNavigator />
-          </AppTheme>
-        </Provider>
-      </ApiServiceProvider>
+      <Provider store={store}>
+        <AppTheme>
+          <AppNavigator />
+        </AppTheme>
+      </Provider>
     </SafeAreaProvider>
   );
 };

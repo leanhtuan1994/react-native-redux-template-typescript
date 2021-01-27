@@ -1,11 +1,9 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import { registerScreen, ScreenComponent } from "navigation/utils";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "stores/rootReducer";
-import { Text, Button } from "react-native-elements";
-
-import { actions } from "../commons/setting/setting.slice";
+import { Text } from "react-native-elements";
 
 const Name = "Home";
 
@@ -22,18 +20,11 @@ const styles = StyleSheet.create({
 });
 
 const Home: ScreenComponent<HomeParam, "Home"> = () => {
-  const dispatch = useDispatch();
   const setting = useSelector((state: RootState) => state.setting);
 
   return (
     <View style={styles.container}>
       <Text>{setting.name}</Text>
-      <Button
-        title="Update"
-        onPress={() => {
-          dispatch(actions.updateName("Tuan Anh Le"));
-        }}
-      />
     </View>
   );
 };

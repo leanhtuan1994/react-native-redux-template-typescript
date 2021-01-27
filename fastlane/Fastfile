@@ -1,0 +1,25 @@
+before_all do
+  UI.message("---> 🕗  YARN INSTALL")
+  yarn(command: 'install')
+  yarn(command: 'clear')
+end
+
+platform :ios do
+   # iOS Lanes
+end
+
+# Android lane
+platform :android do
+    lane :demo do
+      gradle(task: "assembleDebug", project_dir: "android/")
+    end
+    lane :demo_local do
+      demo
+      open_build_folder
+    end
+    private_lane :open_build_folder do
+      apk_path = Actions.lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
+      UI.success("---> ✅ PATH: #{apk_path}")
+      sh("open ../android/app/build/outputs")
+    end
+end
